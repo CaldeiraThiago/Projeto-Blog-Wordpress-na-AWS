@@ -87,7 +87,19 @@ A aplicação é dividida em três camadas distintas, cada uma com um papel espe
 
 ## Conexão com o Banco de Dados
 
+- Navegue até a pasta **/var/www/html/**
+- Renomeie o arquivo de exemplo: **sudo mv wp-config-sample.php wp-config.php**
+- Edite o arquivo: **sudo nano wp-config.php**
+- preencha as seguintes informações, usando os dados que você obteve do RDS:
 
+    DB_NAME: wordpress (ou o nome que você usou) <br>
+    DB_USER: admin (ou o nome de usuário que você criou) <br>
+    DB_PASSWORD: A senha que você definiu para o RDS <br>
+    DB_HOST: O ENDPOINT do seu banco de dados RDS <br>
+
+Wordpress disponível a partir da minha instância ServerWeb-Blog
+
+<img width="1486" height="847" alt="image" src="https://github.com/user-attachments/assets/1bc137be-da40-49aa-b36f-cc67a8f86fd6" /> <br><br>
 
 
 **4. Conectividade e Implantação:** Detalhes sobre como a aplicação foi conectada ao banco de dados e como o WordPress foi configurado.
