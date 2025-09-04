@@ -16,6 +16,33 @@ A aplicação é dividida em três camadas distintas, cada uma com um papel espe
 ## Passo a Passo da Implementação
 **1. Configuração da VPC e Segurança:** Detalhes sobre a criação da VPC com sub-redes e as regras dos Security Groups para a comunicação entre o EC2 e o RDS.
 
+**Criação da VPC**: Feito a criação da vpc-projeto-blog para isolar o projeto dentro da assinatura da AWS:
+
+<img width="1646" height="352" alt="image" src="https://github.com/user-attachments/assets/6ae99015-22cf-4182-b7b3-b798dd2cdea3" /> <br>
+
+**Criação sub-rede publica**:
+
+<img width="1637" height="526" alt="image" src="https://github.com/user-attachments/assets/7f64e2f7-62d1-4412-aae8-b9224a87e435" /> <br>
+
+**Criação sub-rede privada**:
+
+<img width="1649" height="519" alt="image" src="https://github.com/user-attachments/assets/516b0ff4-39b3-4054-bfc9-f49c68ba2acf" /> <br>
+
+**Criação do Internet Gateway**: Criei a ProjetoBlog-IG e anexei a vpc-projeto-blog.
+
+<img width="1649" height="335" alt="image" src="https://github.com/user-attachments/assets/cac9adcb-f760-402f-a712-5d06c3c4d350" />
+
+**Criação do Grupo de Segurança Público:** Criado o Grupo de Seguranca ServidorWeb-SG que será voltado para Servidores Web. 
+- **Regra de Entrada**: Criado a regra de entrada SSH que libera apenas IPs da minha rede. Criado uma regra HTTP para a origem 0.0.0.0/0.
+
+<img width="1646" height="502" alt="image" src="https://github.com/user-attachments/assets/4258f538-f0df-4aeb-836b-ece8a4d3f8a8" /> <br>
+
+**Criação do Grupo de Segurança Privado:** Criado o Grupo de Seguranca Database-SG voltado para instancias de banco de dados.
+- **Regra de Entrada**: Criado a regra de entrada do tipo MYSQL/Aurora, para que seja acessado apenas por instâncias que estão no Grupo de Seguranca ServidorWeb-SG.
+
+<img width="1644" height="500" alt="image" src="https://github.com/user-attachments/assets/8bfe1bf1-4c6a-4db4-a375-f45f263195be" /> <br><br>
+
+
 **2. Configuração do Banco de Dados:** Explicação da criação da instância Amazon RDS na sub-rede privada, selecionando o motor de banco de dados e configurando o usuário e senha.
 
 **3. Configuração do Servidor Web:** Descrição do lançamento da instância t2.micro no Amazon EC2, instalação do software necessário (Apache/PHP) e a configuração do WordPress.
