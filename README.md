@@ -43,7 +43,17 @@ A aplicação é dividida em três camadas distintas, cada uma com um papel espe
 <img width="1644" height="500" alt="image" src="https://github.com/user-attachments/assets/8bfe1bf1-4c6a-4db4-a375-f45f263195be" /> <br><br>
 
 
-**2. Configuração do Banco de Dados:** Explicação da criação da instância Amazon RDS na sub-rede privada, selecionando o motor de banco de dados e configurando o usuário e senha.
+**2. Configuração do Banco de Dados:** Explicação da criação da instância Mysql na sub-rede privada, selecionando o motor de banco de dados e configurando o usuário e senha.
+
+<img width="1602" height="758" alt="image" src="https://github.com/user-attachments/assets/54cc852c-ede8-413a-99e2-a7728ea8bfb0" /><br>
+
+- **Classe da instancia:** db.t4g.micro
+- **Imagem:** MySQL Community
+- **Região:** us-east-1a
+- **VPC:** vpc-projeto-blog (vpc-0ad9a90be615abfd4)
+- **Grupo de sub-redes:** default-vpc-0ad9a90be615abfd4
+- **Grupos de segurança da VPC:** Database-SG (sg-0d7f1b8321707b5cb)
+- **Porta:** 3306 <br><br>
 
 **3. Configuração do Servidor Web:** Descrição do lançamento da instância t2.micro no Amazon EC2, instalação do software necessário (Apache/PHP) e a configuração do WordPress.
 
