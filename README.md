@@ -57,6 +57,39 @@ A aplicação é dividida em três camadas distintas, cada uma com um papel espe
 
 **3. Configuração do Servidor Web:** Descrição do lançamento da instância t2.micro no Amazon EC2, instalação do software necessário (Apache/PHP) e a configuração do WordPress.
 
+**ServerWeb-Blog:** Criado o servidor web para execução da aplicação Wordpress:
+- **VPC:** vpc-projeto-blog
+- **Grupos de segurança:** ServidorWeb-SG
+- **Sub-rede:** ProjetoBlog-SubredePublica
+- **Instancia:** amazon/al2023-ami-2023.8.20250818.0-kernel-6.1-x86_64
+
+<img width="1658" height="760" alt="image" src="https://github.com/user-attachments/assets/414aab90-0c6a-4ae8-888f-4ffc0c1dcba2" /> <br>
+
+## Instalação do Software
+
+- **Conectando a instãncia:** Primeiro me conectei a instância via protocolo SSH com o certificado PEM gerado para o ServerWeb:
+
+<img width="859" height="332" alt="image" src="https://github.com/user-attachments/assets/d92af13b-608d-42b5-892c-52c88644bf1c" /> <br>
+
+- **Instalando o Servidor Web (Apache) e o PHP:**
+
+<img width="840" height="179" alt="image" src="https://github.com/user-attachments/assets/12145fe0-91e2-40b3-8c12-348a5394a90f" /><br>
+
+<img width="787" height="476" alt="image" src="https://github.com/user-attachments/assets/31ea9cee-24d2-4484-bb46-09507372b369" /> <br>
+
+## Baixar e Configurar o WordPress
+
+- Navegue até o diretório /var/www/html/;
+- wget https://wordpress.org/latest.tar.gz
+- tar -xzf latest.tar.gz
+- sudo mv wordpress/* .
+- sudo chown -R apache:apache /var/www/html/
+
+## Conexão com o Banco de Dados
+
+
+
+
 **4. Conectividade e Implantação:** Detalhes sobre como a aplicação foi conectada ao banco de dados e como o WordPress foi configurado.
 
 Desafios e Soluções
