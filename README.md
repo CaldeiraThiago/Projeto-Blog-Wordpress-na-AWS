@@ -104,7 +104,15 @@ Wordpress disponível a partir da minha instância ServerWeb-Blog
 
 **4. Conectividade e Implantação:** Detalhes sobre como a aplicação foi conectada ao banco de dados e como o WordPress foi configurado.
 
-Desafios e Soluções
+**Conexão Segura da Aplicação**
+A conexão entre a aplicação WordPress (na instância EC2) e o banco de dados (no RDS) foi estabelecida de forma segura. Após a criação da instância do banco de dados, o arquivo de configuração do WordPress (wp-config.php) foi editado para incluir as credenciais e o endpoint do RDS, garantindo que a aplicação soubesse como se comunicar com o banco de dados de forma privada.
+
+**Finalização da Instalação do WordPress**
+Com o servidor web e o banco de dados prontos, a instalação foi concluída através do navegador. Ao acessar o endereço IP público da instância EC2, a tela de configuração do WordPress foi exibida. Nela, foram definidos o título do blog, o usuário e a senha de administração.
+
+Esse processo de implantação de três camadas é um dos padrões mais comuns e seguros para aplicações web. Ele demonstra a capacidade de projetar, configurar e implantar uma aplicação completa e funcional na nuvem, desde a rede até o código.
+
+## Desafios e Soluções
 Desafio: Como isolar o banco de dados do acesso público, mas ainda permitir que a aplicação web se conecte a ele?
 
 Solução: Coloquei o Amazon RDS em uma sub-rede privada e criei um Security Group para ele, permitindo apenas conexões vindas do Security Group da instância do Amazon EC2.
@@ -113,5 +121,5 @@ Desafio: Como gerenciar o acesso SSH à instância EC2 de forma segura?
 
 Solução: Utilizei um par de chaves SSH (.pem) para me conectar à instância, seguindo a melhor prática de não usar senhas para acesso administrativo.
 
-Custos
+## Custos
 Este projeto foi totalmente implementado utilizando os recursos da Free Tier da AWS, com custos estimados em zero dólares mensais.
